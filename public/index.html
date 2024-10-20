@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel="preload" href="script.js" as="script" />
+    <link rel="stylesheet" href="styles.css" />
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seed Phrase Generator</title>
+  </head>
+  <body>
+    <h1 class="title">Seed Phrase Generator:</h1>
+
+    <div class="labelGroup">
+      <label for="numWords">Number of words:</label>
+      <select id="numWords">
+        <option value="12">12</option>
+        <option value="24" selected>24</option>
+      </select>
+      <button id="generateButton">Generate</button>
+    </div>
+
+    <div class="container" id="seedPhraseContainer">
+      <ul class="column" id="column1"></ul>
+      <ul class="column" id="column2"></ul>
+    </div>
+
+    <div class="copyContainer">
+      <span id="seedPhraseText">Generated seed phrase will appear here</span>
+      <button id="copyButton">Copy</button>
+    </div>
+
+    <script src="script.js" type="module" defer></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #292929;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.labelGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background-color: #f27460;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.labelGroup label,
+.labelGroup select,
+.labelGroup button {
+  font-size: 18px;
+}
+
+#numWords {
+  padding: 10px;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+}
+
+#generateButton {
+  background-color: white;
+  color: #292929;
+}
+
+#generateButton:hover,
+#copyButton:hover {
+  background-color: #ccc;
+}
+
+#copyButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f27460;
+  border: none;
+}
+
+#copyButton:before {
+  content: "\1F512";
+  margin-right: 5px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+  width: auto;
+  min-height: 200px;
+  margin: 30px auto;
+}
+
+.column {
+  list-style-type: none;
+  padding: 0;
+}
+
+.column li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: left;
+}
+
+.column li::before {
+  content: counter(word) ". ";
+  counter-increment: word;
+  color: #f27460;
+}
+
+.container {
+  counter-reset: word;
+}
+
+.copyContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f27460;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  margin-top: 20px;
+  max-width: 80%;
+}
+
+#seedPhraseText {
+  margin-right: 15px;
+  text-align: center;
+}
