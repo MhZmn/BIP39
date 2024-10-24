@@ -4,10 +4,11 @@ const mongoose = require("mongoose");
 const wordList = require("./word-list.js");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+const MONGODB_URI = process.env.MONGODB_URI;
 
 mongoose
-  .connect(process.env.DATABASE_URI)
+  .connect(MONGODB_URI)
   .then(() => console.log("MongoDB connected successfully"))
   .catch((err) => console.log("MongoDB connection error: ", err));
 
@@ -62,5 +63,5 @@ app.get("/generate", async (req, res) => {
 app.use(express.static("public"));
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on ${process.env.SITE_URL}:${PORT}`);
 });

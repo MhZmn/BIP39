@@ -16,12 +16,9 @@ async function generateSeedPhrase() {
     return;
   }
 
-  const response = await fetch(
-    `http://localhost:3000/generate?numWords=${numWords}`,
-    {
-      method: "GET",
-    }
-  );
+  const response = await fetch(`/generate?numWords=${numWords}`, {
+    method: "GET",
+  });
 
   const data = await response.json();
 
