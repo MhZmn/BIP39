@@ -21,7 +21,7 @@ export default function copySeedPhrase() {
     navigator.clipboard
       .writeText(seedPhraseText)
       .then(() => {
-        alert("Seed phrase copied to clipboard!");
+        console.log("Text copied to clipboard");
       })
       .catch((err) => {
         console.error("Could not copy text: ", err);

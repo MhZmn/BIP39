@@ -1,11 +1,15 @@
 const express = require("express");
+require("dotenv").config();
 const mongoose = require("mongoose");
 const wordList = require("./word-list.js");
 
 const app = express();
 const PORT = 3000;
 
-mongoose.connect("mongodb://localhost:27017/seedphrases");
+mongoose
+  .connect(process.env.DATABASE_URI)
+  .then(() => console.log("MongoDB connected successfully"))
+  .catch((err) => console.log("MongoDB connection error: ", err));
 
 const seedPhraseSchema = new mongoose.Schema({
   phrase: String,
